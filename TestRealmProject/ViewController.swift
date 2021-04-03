@@ -5,8 +5,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("🟢 ViewDid Load")
+        
         let realm = try! Realm()
+        print("🟢 DB file URL: \(realm.configuration.fileURL)")
+        
         let person = Person()
         do {
             try realm.write {
